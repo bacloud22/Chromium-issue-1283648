@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+  </head>
+  <body>
+    <div id="detection"></div>
+    <div id="disclaimer">
+      <h2 style="color: red"> This page is for web developers only and security testers </h2>
+      <h3 style="color: red">Use at your own risk. I take no responsibility</h3>
+      <blockquote> Basically, running the script would start to eat memory in your system without limits then it hangs you browser. You might lose your current browser session and all the active work. It might even destabilize you whole system </blockquote>
+      <p> I don't know what's going on really, but It seems either GC is overwhelmed or OOM is not well managed in this situation. I can only guess. </p>
+      <p> Please email me with your findings here. Just specify the browser version and the behaviour </p>
+      <a class="nav-link" href="mailto:&#098;&#097;&#099;&#108;&#111;&#117;&#100;&#049;&#052;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=About&nbsp;Browser OOM">Contact me</a>
+    </div>
+    <hr />
+    <div id="disclaimer">
+        <p>I want to instantly leave</p>
+            <input style="background-color: cadetblue;" type="button" value="Leave now!" onclick="userNotTesting()" />
+            <input type="button" value="Test it now!" onclick="userTesting()" />
+        <div id="dvPassport" style="display: none">
+            <p>Again, the explorer is likely to hang and you might lose you session and the whole system destabilizes:</p>
+            <input style="background-color: brown;" type="button" value="Go ahaid now!" onclick="test()" />
+        </div>
+    </div>
+    <hr />
+    <!-- Display the countdown timer in an element -->
+    <p id="demo"></p>
+  </body>
+  <script src="detect.js" async defer></script>
+</html>
