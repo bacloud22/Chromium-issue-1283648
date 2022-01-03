@@ -7,6 +7,11 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <script id="worker1" type="javascript/worker">
+      self.onmessage = function(e) {
+        self.postMessage('msg from worker');
+      };
+    </script>
   </head>
   <body>
     <div id="detection"></div>
